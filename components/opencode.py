@@ -1,4 +1,4 @@
-from opencode_ai import Opencode
+from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
@@ -6,7 +6,7 @@ load_dotenv()
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-cliente = Opencode(
+cliente = OpenAI(
     base_url="https://openrouter.ai/api/v1",
     api_key=OPENROUTER_API_KEY,
     default_headers={
@@ -16,7 +16,7 @@ cliente = Opencode(
 )
 
 
-def opencode(message: str, model: str = "x-ia/mimo-v2.5"):
+def opencode(message: str, model: str = "x-ia/mimo-v2.5:free"):
     try:
         response = cliente.chat.completions.create(
             model=model, messages=[{"role": "user", "content": message}]
