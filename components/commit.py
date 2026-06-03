@@ -13,12 +13,18 @@ def commit():
     if not diff:
         diff = ejecutar_comando("git diff")
     
-    if not diff:
+    # Verificar archivos nuevos (untracked)
+    untracked = ejecutar_comando("git ls-files --others --exclude-standard")
+    
+    if not diff and not untracked:
         print("No hay cambios para commitear")
         return
 
     # Generar mensaje de commit con IA
-    prompt = f"Genera un mensaje de commit corto y descriptivo para estos cambios:\n\n{diff[:2000]}"
+    info_cambios = diff
+    if untracked:
+        info_cambios += f"\n\nArchivos nuevos: {untracked}"
+    prompt = f"Genera un mensaje de commit corto y descriptivo para estos cambios:\n\n{info_cambios[:2000]}"
     mensaje_commit = opencode(prompt)
     
     # Limpiar el mensaje (quitar comillas si las tiene)
