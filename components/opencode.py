@@ -16,7 +16,7 @@ cliente = OpenAI(
 )
 
 
-def opencode(message: str, model: str = "meta-llama/llama-4-maverick:free"):
+def opencode(message: str, model: str = "qwen/qwen3-coder:free"):
     try:
         response = cliente.chat.completions.create(
             model=model, messages=[{"role": "user", "content": message}]
