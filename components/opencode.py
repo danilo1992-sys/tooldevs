@@ -16,7 +16,7 @@ cliente = OpenAI(
 )
 
 
-def opencode(message: str, model: str = "qwen/qwen3-coder:free"):
+def opencode(message: str, model: str = "nvidia/nemotron-3-nano-30b-a3b:free"):
     try:
         response = cliente.chat.completions.create(
             model=model, messages=[{"role": "user", "content": message}]
