@@ -16,7 +16,7 @@ cliente = OpenAI(
 )
 
 
-def opencode(message: str, model: str = "x-ia/mimo-v2.5:free"):
+def opencode(message: str, model: str = "meta-llama/llama-4-maverick:free"):
     try:
         response = cliente.chat.completions.create(
             model=model, messages=[{"role": "user", "content": message}]
