@@ -1,53 +1,63 @@
 from components.commit import commit
 from components.opencode import opencode
-from InquirerPy import promt
+from InquirerPy import prompt
+
 
 def crear():
-     promt = "Genera un archivo README.md de este repositorio"
-    opencode(promt)   
+    mensaje = "Genera un archivo README.md de este repositorio"
+    contenido = opencode(mensaje)
+    with open("README.md", "w") as f:
+        f.write(contenido)
+    print("README.md creado")
+
 
 def update():
-    promt = "Actualiza el archivo README.md con la nuevas carateristicas"
-    opencode(promt)
+    mensaje = "Actualiza el archivo README.md con las nuevas caracteristicas"
+    contenido = opencode(mensaje)
+    with open("README.md", "w") as f:
+        f.write(contenido)
+    print("README.md actualizado")
+
+
 def readmee():
     opciones = {
-        "Creat archivo README.md": crear(),
-        "Actualizar archivo READMEE.md": update(),
+        "Crear archivo README.md": crear,
+        "Actualizar archivo README.md": update,
     }
     while True:
         select = [
             {
-                "type": "select",
-                "mensaje": "selecione una opcion",
-                "name":"name", 
+                "type": "list",
+                "message": "selecione una opcion",
+                "name": "opcion",
                 "choices": [
-                    "Crear archivo READMEE.md",
-                    "Actualizar archivo READMEE.md",
-                    "Salir", 
+                    "Crear archivo README.md",
+                    "Actualizar archivo README.md",
+                    "Salir",
                 ],
             }
         ]
-        result = promt(select)
-        name = result['name']
+        result = prompt(select)
+        name = result["opcion"]
 
-        if opciones == "Salir": 
-             break
+        if name == "Salir":
+            break
 
-        if opcion in opciones:
-            opciones[opcion]()
-        else: 
+        if name in opciones:
+            opciones[name]()
+        else:
             print(f"[!] Opcion no encontrada")
 
         confirm = [
             {
-            "type":"confirm",
-            "mensaje":"Desea agregar el archivo READMEE.md a git",
-            "name":"git",
-            "default":"True",
+                "type": "confirm",
+                "message": "Desea agregar el archivo README.md a git",
+                "name": "git",
+                "default": True,
             }
         ]
-        result = promt(confirm)
-            
+        result = prompt(confirm)
+
         if result["git"]:
             commit()
         else:

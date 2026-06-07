@@ -1,12 +1,14 @@
 from InquirerPy import prompt
 from components.commit import commit
 from components.readme import readmee
+from components.linkedin import linkedin
 
 
 def main():
     opciones = {
         "Generar un commit y hacer push": commit,
         "Generar un archivo readme y subirlo a github": readmee,
+        "Generar una publicacion en linkedin": linkedin,
     }
 
     while True:
@@ -16,7 +18,7 @@ def main():
                 "message": "Selecione una opcion",
                 "choices": [
                     "Generar un commit y hacer push",
-                    "Generar un archivo readme y subirlo a github"
+                    "Generar un archivo readme y subirlo a github",
                     "Generar una publicacion en linkedin",
                     "Salir",
                 ],
