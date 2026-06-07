@@ -3,7 +3,6 @@ from components.opencode import opencode
 from InquirerPy import prompt
 from halo import Halo
 
-
 def crear():
     with Halo(text="Generando archivo README.md", spinner="dots"):
         mensaje = "Genera un archivo README.md de este repositorio"
@@ -14,8 +13,9 @@ def crear():
 
 
 def update():
-    mensaje = "Actualiza el archivo README.md con las nuevas caracteristicas"
-    contenido = opencode(mensaje)
+    with Halo(text="Actualizando archivo README.md", spinner="dots"):
+        mensaje = "Actualiza el archivo README.md con las nuevas caracteristicas"
+        contenido = opencode(mensaje)
     with open("README.md", "w") as f:
         f.write(contenido)
     print("README.md actualizado")

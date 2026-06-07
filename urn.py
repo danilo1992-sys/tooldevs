@@ -12,7 +12,7 @@ if not ACCESS_TOKEN:
 headers = {
     "Authorization": f"Bearer {ACCESS_TOKEN}",
     "X-Restli-Protocol-Version": "2.0.0",
-    "LinkedIn-Version": "202506",
+    "LinkedIn-Version": "202604",
 }
 
 # Intenta /rest/me, si falla usa /v2/userinfo (OpenID Connect)
