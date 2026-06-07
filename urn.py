@@ -1,6 +1,13 @@
 import requests
+from dotenv import load_dotenv
+import os
 
-ACCESS_TOKEN = "AQWLoBkpjlFjjwJz_BH-0yb3gFM5V5-4soseXVKZ2jtrIPBkPmRMPPdz5dek2Nc18JiclJ7MqYgjceEdk8AJp3FciFLnb0ST2UfE_AyFAgG0gyHJ3Zn8yvDY251gKcSlk9IU0p-NHjMvTm3PhCOuU2TA9P-iXdeXErWpbQaPVYpHj1lkuc8jaIERCngDWmf0u-P4lP1796UjAf1eeiN75EI8gqKCSxId4Omkb06YOcz-fNckIFptfjbqgmuFBB13VlJmiOwA9sFsl_vVWGIiOdbOYfbaIPk_5VOE5I0h6iCLa8ihsjR7yEALPE0Lb0WmiCFgfRoOoa3HjBPROPLP14xT1GxjPg"
+load_dotenv()
+ACCESS_TOKEN = os.getenv("LINKEDIN_ACCESS_TOKEN")
+
+if not ACCESS_TOKEN:
+    print("Error: LINKEDIN_ACCESS_TOKEN no encontrado en .env")
+    exit(1)
 
 headers = {
     "Authorization": f"Bearer {ACCESS_TOKEN}",

@@ -1,11 +1,13 @@
 from components.commit import commit
 from components.opencode import opencode
 from InquirerPy import prompt
+from halo import Halo
 
 
 def crear():
-    mensaje = "Genera un archivo README.md de este repositorio"
-    contenido = opencode(mensaje)
+    with Halo(text="Generando archivo README.md", spinner="dots"):
+        mensaje = "Genera un archivo README.md de este repositorio"
+        contenido = opencode(mensaje)
     with open("README.md", "w") as f:
         f.write(contenido)
     print("README.md creado")

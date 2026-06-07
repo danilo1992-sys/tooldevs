@@ -29,7 +29,7 @@ def linkedin():
     ]
     result = prompt(opciotion)
 
-    prompts = f"genera una descripcion con iconoes y hashtags para linkedin para este projecto {result}"
+    prompts = f"genera una descripcion con iconoes y hashtags para linkedin para este projecto {result['git']}"
     msg = opencode(prompts)
 
     payload = {
