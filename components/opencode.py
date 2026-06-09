@@ -16,7 +16,7 @@ cliente = OpenAI(
 )
 
 
-def readme(message: str, model: str = "openai/gpt-oss-20b:free"):
+def opencode(message: str, model: str = "openai/gpt-oss-20b:free"):
     try:
         response = cliente.chat.completions.create(
             model=model, messages=[{"role": "user", "content": message}]

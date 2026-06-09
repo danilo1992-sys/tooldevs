@@ -34,7 +34,7 @@ def linkedin():
     prompt_text = f"""Actúa como un experto en Personal Branding para perfiles técnicos. Escribe una descripción de impacto para mi sección de 'Experiencia' en LinkedIn sobre este proyecto/cargo. Enfócate en resultados, tecnologías clave utilizadas y el impacto técnico. Mantén un tono profesional pero entusiasta. No uses clichés excesivos."""
 
     with Halo(text="Generando publicacion con IA", spinner="dots"):
-        msg = opencode(prompt_text)
+        msg = linkedin(prompt_text)
 
     commentary = f"{msg}\n\n{repo_url}"
 
