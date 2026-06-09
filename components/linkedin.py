@@ -1,5 +1,5 @@
 import requests
-from components.opencode import linkedin
+from components.opencode import linkedin as linkedin_ai
 import os
 from dotenv import load_dotenv
 from InquirerPy import prompt
@@ -34,7 +34,7 @@ def linkedin():
     prompt_text = f"""Actúa como un experto en Personal Branding para perfiles técnicos. Escribe una descripción de impacto para mi sección de 'Experiencia' en LinkedIn sobre este proyecto/cargo. Enfócate en resultados, tecnologías clave utilizadas y el impacto técnico. Mantén un tono profesional pero entusiasta. No uses clichés excesivos."""
 
     with Halo(text="Generando publicacion con IA", spinner="dots"):
-        msg = linkedin(prompt_text)
+        msg = linkedin_ai(prompt_text)
 
     commentary = f"{msg}\n\n{repo_url}"
 
