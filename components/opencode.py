@@ -16,7 +16,27 @@ cliente = OpenAI(
 )
 
 
-def opencode(message: str, model: str = "nvidia/nemotron-3-nano-30b-a3b:free"):
+def readme(message: str, model: str = "openai/gpt-oss-20b:free"):
+    try:
+        response = cliente.chat.completions.create(
+            model=model, messages=[{"role": "user", "content": message}]
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        return f"Error:{e}"
+
+
+def linkedin(message: str, model: str = "google/gemini-2-flash:free"):
+    try:
+        response = cliente.chat.completions.create(
+            model=model, messages=[{"role": "user", "content": message}]
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        return f"Error:{e}"
+
+
+def commits(message: str, model: str = "openai/gpt-5.4-nano:free"):
     try:
         response = cliente.chat.completions.create(
             model=model, messages=[{"role": "user", "content": message}]

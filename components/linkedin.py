@@ -1,5 +1,5 @@
 import requests
-from components.opencode import opencode
+from components.opencode import linkedin
 import os
 from dotenv import load_dotenv
 from InquirerPy import prompt
@@ -31,33 +31,7 @@ def linkedin():
     result = prompt(opciotion)
     repo_url = result["git"]
 
-    prompt_text = f"""Genera una publicacion para LinkedIn sobre este repositorio de GitHub: {repo_url}
-
-Sigue EXACTAMENTE este formato y estilo:
-
-🚀 **Nombre del Proyecto** - Breve descripcion del proyecto
-
-Primera linea explicando que es la herramienta y que hace.
-
-⚡ **Seccion principal (ej: Features/Frameworks/Caracteristicas):**
-- Emoji **Nombre** - Descripcion corta
-- Emoji **Nombre** - Descripcion corta
-- Emoji **Nombre** - Descripcion corta
-
-🛠 **Tecnologias:**
-- Bullet point con tecnologias usadas
-
-💡 **Cierre:** Frase para desarrolladores o usuarios ideales
-
-IMPORTANTE:
-- Usa emojis al inicio de cada linea
-- Usa negrita con **texto** para titulos de seccion
-- Usa - o • para listas
-- NO uses ## para titulos
-- Termina con 15 hashtags separados por espacio usando el formato hashtag#Palabra
-- No pongas saltos de linea dobles excesivos
-- El tono debe ser profesional pero amigable
-- Menciona las tecnologias principales que uses en el proyecto"""
+    prompt_text = f"""Actúa como un experto en Personal Branding para perfiles técnicos. Escribe una descripción de impacto para mi sección de 'Experiencia' en LinkedIn sobre este proyecto/cargo. Enfócate en resultados, tecnologías clave utilizadas y el impacto técnico. Mantén un tono profesional pero entusiasta. No uses clichés excesivos."""
 
     with Halo(text="Generando publicacion con IA", spinner="dots"):
         msg = opencode(prompt_text)

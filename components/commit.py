@@ -1,6 +1,7 @@
 import subprocess
-from components.opencode import opencode
-from halo import Halo 
+from components.opencode import commits
+from halo import Halo
+
 
 def ejecutar_comando(comando):
     resultado = subprocess.run(comando, shell=True, capture_output=True, text=True)
@@ -22,8 +23,8 @@ def commit():
         info_cambios = diff
         if untracked:
             info_cambios += f"\n\nArchivos nuevos: {untracked}"
-        prompt = f"Genera un mensaje de commit corto y descriptivo para estos cambios:\n\n{info_cambios[:2000]}"
-        mensaje_commit = opencode(prompt)
+        prompt = f"Escribe un mensaje de commit siguiendo la convención Conventional Commits. El mensaje debe ser corto (máximo 50 caracteres para el título) seguido de una breve descripción de los cambios. Analiza este diff:\n\n{info_cambios[:2000]}"
+        mensaje_commit = commits(prompt)
 
     mensaje_commit = mensaje_commit.strip().strip('"').strip("'")
 

@@ -37,12 +37,12 @@ def crear():
         contexto = leer_contexto_proyecto()
 
     with Halo(text="Generando archivo README.md", spinner="dots"):
-        mensaje = f"""Genera un archivo README.md profesional y completo para este proyecto de Python CLI.
+        mensaje = f"""Actúa como un desarrollador senior. Genera un README.md profesional para este proyecto. Incluye: una descripción clara, una tabla de 'Características', una sección de 'Instalación' paso a paso, y una breve sección de 'Cómo contribuir'. Usa formato Markdown limpio y emojis sutiles donde sea necesario para mejorar la legibilidad.
 
 CONTEXTO DEL PROYECTO:
 {contexto}
 
-INSTRUCCIONES:
+INSTRUCCIONES ADICIONALES:
 - Lee el contexto del proyecto arriba para entender que hace
 - NO uses placeholders entre corchetes como [Nombre del Proyecto]
 - Escribe el nombre real del proyecto basado en pyproject.toml
@@ -64,12 +64,12 @@ def update():
         contexto = leer_contexto_proyecto()
 
     with Halo(text="Actualizando archivo README.md", spinner="dots"):
-        mensaje = f"""Actualiza el archivo README.md existente con la informacion mas reciente del proyecto.
+        mensaje = f"""Actúa como un desarrollador senior. Actualiza el archivo README.md profesional para este proyecto. Incluye: una descripción clara, una tabla de 'Características', una sección de 'Instalación' paso a paso, y una breve sección de 'Cómo contribuir'. Usa formato Markdown limpio y emojis sutiles donde sea necesario para mejorar la legibilidad.
 
 CONTEXTO DEL PROYECTO:
 {contexto}
 
-INSTRUCCIONES:
+INSTRUCCIONES ADICIONALES:
 - Mantene la estructura existente si es buena
 - Actualiza la informacion basada en el codigo fuente actual
 - NO uses placeholders entre corchetes
