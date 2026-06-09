@@ -1,0 +1,21 @@
+🚀 Acabo de lanzar ToolDevs CLI Toolkit – Mi nueva herramienta open source que automatiza las tareas más tediosas de los devs que mantienen proyectos en GitHub y comparten su trabajo en LinkedIn ✨
+
+🛠️ ¿Qué hace?
+1️⃣ Commit Inteligente → Analiza tu diff, genera mensajes siguiendo Conventional Commits con IA y hace push automático 🤖
+2️⃣ README.md Automático → Crea/actualiza documentación profesional adaptada a tu proyecto en segundos 📝
+3️⃣ Publicación en LinkedIn → Genera posts de impacto para tu perfil de Experiencia a partir de tu repo 📱
+
+⚡ Stack técnico:
+• Python 3.14+ | CLI interactiva con InquirerPy + Halo 🎨
+• IA-driven via OpenRouter (modelos LLM unificados) 🧠
+• Modular: commit.py | readme.py | linkedin.py 📦
+• Solo 5 dependencias esenciales – zero bloat 💪
+
+💡 El flow es simple:
+python main.py
+# Seleccionas opción → Confirma → ¡Listo!
+
+🔗 Repo: https://github.com/danilo1992-sys/tooldevs
+⭐ Dale una estrella si te parece útil – ¡PRs bienvenidos!
+
+#Python #OpenSource #CLI #AI #DeveloperTools #GitHub #LinkedIn #Automation #Productivity
