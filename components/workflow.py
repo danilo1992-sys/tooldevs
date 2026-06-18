@@ -1,7 +1,39 @@
+import os
+import re
+
 from InquirerPy import prompt as inquirer_prompt
 from components.opencode import workflow as generar_con_ia
 from components.commit import commit
 from halo import Halo
+
+WORKFLOW_DIR  = ".github/workflows"
+
+
+def _extraer_yaml(texto: str) -> str | None:
+    """Extrae YAML de la respuesta de la IA, manejando codeblocks."""
+    block = re.search(
+        r"```(?:yaml|yml)?\s*\n?(.*?)```", texto, re.DOTALL
+    ) or re.search(r"^---\n(.*?)(?:^---|\Z)", texto, re.DOTALL)
+    return block.group(1).strip() if block else texto.strip()
+
+
+def _nombre_workflow(yaml_content: str) -> str:
+    """Extrae el nombre del workflow del YAML vía regex para usarlo como filename."""
+    m = re.search(r'^name\s*:\s*(.+)$', yaml_content, re.MULTILINE)
+    nombre = m.group(1).strip().strip('"').strip("'") if m else "workflow"
+    return re.sub(r"[^a-zA-Z0-9_-]+", "-", nombre).strip("-").lower()
+
+
+def _escribir_workflow(yaml_content: str, nombre_base: str):
+    """Escribe el YAML en .github/workflows/<nombre>.yml."""
+    os.makedirs(WORKFLOW_DIR, exist_ok=True)
+    ruta = os.path.join(WORKFLOW_DIR, f"{nombre_base}.yml")
+
+    with open(ruta, "w") as f:
+        f.write(yaml_content)
+
+    print(f" Workflow guardado en {ruta}")
+    return ruta
 
 
 def docker():
@@ -13,14 +45,15 @@ def docker():
     - Secrets: explica qué configurar en Settings > Secrets
     - Permisos: contents: read, packages: write (si aplica)
 
-    Incluye explicación breve de cada step y la lista de secrets necesarios."""
+    Devuelve SOLO el YAML, sin explicaciones ni markdown."""
 
     with Halo(text="Generando workflow Docker con IA", spinner="dots"):
-        msg = generar_con_ia(prompt_text)
+        respuesta = generar_con_ia(prompt_text)
 
-    print(msg)
+    yaml_content = _extraer_yaml(respuesta)
+    nombre = _nombre_workflow(yaml_content)
+    _escribir_workflow(yaml_content, nombre)
     commit()
-    return msg
 
 
 def releases():
@@ -33,15 +66,17 @@ def releases():
     - Compilar binarios de la aplicación y subirlos como assets del release
     - Publicar en PyPI, npm, crates.io o similar (opcional pero valorado)
     - Firma de checksums (SHA256) de los artifacts
+    - Permisos: contents: write
 
-    Incluye explicación breve de cada step, lista de permisos necesarios (contents: write) y cómo funciona GITHUB_TOKEN automáticamente."""
+    Devuelve SOLO el YAML, sin explicaciones ni markdown."""
 
     with Halo(text="Generando workflow Releases con IA", spinner="dots"):
-        msg = generar_con_ia(prompt_text)
+        respuesta = generar_con_ia(prompt_text)
 
-    print(msg)
+    yaml_content = _extraer_yaml(respuesta)
+    nombre = _nombre_workflow(yaml_content)
+    _escribir_workflow(yaml_content, nombre)
     commit()
-    return msg
 
 
 def workflow():
