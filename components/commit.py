@@ -1,11 +1,6 @@
-import subprocess
+from components.utils import ejecutar_comando
 from components.opencode import commits
 from halo import Halo
-
-
-def ejecutar_comando(comando):
-    resultado = subprocess.run(comando, shell=True, capture_output=True, text=True)
-    return resultado.stdout.strip()
 
 
 def commit():

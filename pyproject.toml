@@ -8,6 +8,7 @@ dependencies = [
     "halo>=0.0.31",
     "inquirerpy>=0.3.4",
     "openai>=1.0.0",
+    "pyfiglet>=1.0.4",
     "python-dotenv>=1.2.2",
     "requests>=2.34.2",
 ]

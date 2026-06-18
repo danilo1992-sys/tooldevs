@@ -1,8 +1,15 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+import sys
 import time
+from pathlib import Path
 
+if getattr(sys, "frozen", False):
+    base_dir = Path(sys.executable).resolve().parent.parent
+else:
+    base_dir = Path(__file__).resolve().parent.parent
+load_dotenv(base_dir / ".env")
 load_dotenv()
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
@@ -44,4 +51,8 @@ def linkedin(message: str, model: str = "nvidia/nemotron-3-ultra-550b-a55b:free"
 
 
 def commits(message: str, model: str = "openai/gpt-oss-20b:free"):
+    return _call_with_retry(model, message)
+
+
+def workflow(message: str, model: str = "google/gemma-4-26b-a4b-it:free"):
     return _call_with_retry(model, message)

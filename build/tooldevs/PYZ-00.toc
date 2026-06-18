@@ -491,7 +491,7 @@
   ('colorsys',
    '/home/linuxbrew/.linuxbrew/opt/python@3.14/lib/python3.14/colorsys.py',
    'PYMODULE'),
-  ('components', '-', 'PYMODULE'),
+  ('components', '/home/danilo/tooldevs/components/__init__.py', 'PYMODULE'),
   ('components.commit',
    '/home/danilo/tooldevs/components/commit.py',
    'PYMODULE'),
