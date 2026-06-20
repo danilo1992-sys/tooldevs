@@ -7,6 +7,7 @@ on:
 
 permissions:
   contents: write
+  id-token: write  # para PyPI OIDC
 
 jobs:
   build-and-release:
@@ -17,30 +18,26 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup Environment
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: '20'
+          python-version: '3.14'
 
       - name: Install Dependencies
-        run: npm install
-
-      - name: Build Binaries
         run: |
-          mkdir -p dist
-          npm run build --if-present
-          # Simulamos la creación de un binario si no existe el comando build
-          echo "binary content" > dist/myapp-linux-amd64
-          echo "binary content" > dist/myapp-macos-arm64
-          echo "binary content" > dist/myapp-windows-amd64.exe
+          python -m pip install --upgrade pip
+          pip install build
+
+      - name: Build Package
+        run: |
+          python -m build
 
       - name: Generate Changelog
         id: changelog
         run: |
-          # Genera un changelog basado en commits desde el tag anterior
-          PREVIOUS_TAG=$(git describe --tags --abbrev=0 ${{ github.ref }}^ 2>/dev/null || git rev-list --max-parents=0 HEAD)
+          PREVIOUS_TAG=$(git describe --tags --abbrev=0 HEAD^ 2>/dev/null || git rev-list --max-parents=0 HEAD)
           echo "body<<EOF" >> $GITHUB_OUTPUT
-          git log $PREVIOUS_TAG..${{ github.ref }} --oneline --pretty=format:"* %s (%h)" >> $GITHUB_OUTPUT
+          git log "$PREVIOUS_TAG"..HEAD --oneline --pretty=format:"* %s (%h)" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Generate Checksums
@@ -54,16 +51,15 @@ jobs:
           body: ${{ steps.changelog.outputs.body }}
           files: |
             dist/*
-            dist/checksums.txt
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Publish to NPM (Optional)
+      - name: Publish to PyPI (Optional)
         if: success()
         run: |
-          # Descomenta y configura para usar en proyectos Node.js
-          # echo "${{ secrets.NPM_TOKEN }}" > .npmrc
-          # npm publish
-          echo "NPM publishing skipped in this template"
+          echo "PyPI publishing skipped — configura Trusted Publishing en pypi.org"
+          # Para habilitar, descomenta y configura:
+          # - name: Publish to PyPI
+          #   uses: pypa/gh-action-pypi-publish@release/v1
