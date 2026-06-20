@@ -6,20 +6,20 @@ from components.opencode import workflow as generar_con_ia
 from components.commit import commit
 from halo import Halo
 
-WORKFLOW_DIR  = ".github/workflows"
+WORKFLOW_DIR = ".github/workflows"
 
 
 def _extraer_yaml(texto: str) -> str | None:
     """Extrae YAML de la respuesta de la IA, manejando codeblocks."""
-    block = re.search(
-        r"```(?:yaml|yml)?\s*\n?(.*?)```", texto, re.DOTALL
-    ) or re.search(r"^---\n(.*?)(?:^---|\Z)", texto, re.DOTALL)
+    block = re.search(r"```(?:yaml|yml)?\s*\n?(.*?)```", texto, re.DOTALL) or re.search(
+        r"^---\n(.*?)(?:^---|\Z)", texto, re.DOTALL
+    )
     return block.group(1).strip() if block else texto.strip()
 
 
 def _nombre_workflow(yaml_content: str) -> str:
     """Extrae el nombre del workflow del YAML vía regex para usarlo como filename."""
-    m = re.search(r'^name\s*:\s*(.+)$', yaml_content, re.MULTILINE)
+    m = re.search(r"^name\s*:\s*(.+)$", yaml_content, re.MULTILINE)
     nombre = m.group(1).strip().strip('"').strip("'") if m else "workflow"
     return re.sub(r"[^a-zA-Z0-9_-]+", "-", nombre).strip("-").lower()
 

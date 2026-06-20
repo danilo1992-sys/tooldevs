@@ -24,9 +24,11 @@ imports:
  &#8226;   <a href="#abc">abc</a>
  &#8226;   <a href="#codecs">codecs</a>
  &#8226;   <a href="#collections">collections</a>
+ &#8226;   <a href="#components.banner">components.banner</a>
  &#8226;   <a href="#components.commit">components.commit</a>
  &#8226;   <a href="#components.linkedin">components.linkedin</a>
  &#8226;   <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
  &#8226;   <a href="#copyreg">copyreg</a>
  &#8226;   <a href="#encodings">encodings</a>
  &#8226;   <a href="#encodings._win_cp_codecs">encodings._win_cp_codecs</a>
@@ -154,6 +156,7 @@ imports:
  &#8226;   <a href="#enum">enum</a>
  &#8226;   <a href="#functools">functools</a>
  &#8226;   <a href="#genericpath">genericpath</a>
+ &#8226;   <a href="#halo">halo</a>
  &#8226;   <a href="#heapq">heapq</a>
  &#8226;   <a href="#io">io</a>
  &#8226;   <a href="#keyword">keyword</a>
@@ -163,6 +166,7 @@ imports:
  &#8226;   <a href="#operator">operator</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#posixpath">posixpath</a>
+ &#8226;   <a href="#pyfiglet.fonts">pyfiglet.fonts</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#pyi_rth_pkgutil.py">pyi_rth_pkgutil.py</a>
@@ -991,6 +995,7 @@ imported by:
  &#8226;   <a href="#InquirerPy.utils">InquirerPy.utils</a>
  &#8226;   <a href="#components.linkedin">components.linkedin</a>
  &#8226;   <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
  &#8226;   <a href="#main.py">main.py</a>
 
   </div>
@@ -2619,6 +2624,7 @@ imported by:
  &#8226;   <a href="#pydantic_core">pydantic_core</a>
  &#8226;   <a href="#pydantic_core.core_schema">pydantic_core.core_schema</a>
  &#8226;   <a href="#pydoc">pydoc</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#requests">requests</a>
  &#8226;   <a href="#requests._types">requests._types</a>
  &#8226;   <a href="#requests.adapters">requests.adapters</a>
@@ -3060,7 +3066,6 @@ imports:
 imported by:
     <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#ctypes._layout">ctypes._layout</a>
- &#8226;   <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
 
   </div>
 
@@ -3244,24 +3249,6 @@ imported by:
  &#8226;   <a href="#site">site</a>
  &#8226;   <a href="#unittest.mock">unittest.mock</a>
  &#8226;   <a href="#zipimport">zipimport</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="_ios_support"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/_ios_support.py" type="text/plain"><tt>_ios_support</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#webbrowser">webbrowser</a>
 
   </div>
 
@@ -7028,7 +7015,6 @@ imported by:
  &#8226;   <a href="#email.base64mime">email.base64mime</a>
  &#8226;   <a href="#email.encoders">email.encoders</a>
  &#8226;   <a href="#encodings.base64_codec">encodings.base64_codec</a>
- &#8226;   <a href="#http.cookies">http.cookies</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#httpcore._async.http_proxy">httpcore._async.http_proxy</a>
  &#8226;   <a href="#httpcore._models">httpcore._models</a>
@@ -8010,10 +7996,30 @@ imported by:
   <a target="code" href="///home/danilo/tooldevs/components/__init__.py" type="text/plain"><tt>components</tt></a>
 <span class="moduletype">Package</span>  <div class="import">
 imported by:
-    <a href="#components.commit">components.commit</a>
+    <a href="#components.banner">components.banner</a>
+ &#8226;   <a href="#components.commit">components.commit</a>
  &#8226;   <a href="#components.linkedin">components.linkedin</a>
  &#8226;   <a href="#components.opencode">components.opencode</a>
  &#8226;   <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.utils">components.utils</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="components.banner"></a>
+  <a target="code" href="///home/danilo/tooldevs/components/banner.py" type="text/plain"><tt>components.banner</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#components">components</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
 
   </div>
 
@@ -8026,13 +8032,14 @@ imported by:
 imports:
     <a href="#components">components</a>
  &#8226;   <a href="#components.opencode">components.opencode</a>
+ &#8226;   <a href="#components.utils">components.utils</a>
  &#8226;   <a href="#halo">halo</a>
- &#8226;   <a href="#subprocess">subprocess</a>
 
   </div>
   <div class="import">
 imported by:
     <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
  &#8226;   <a href="#main.py">main.py</a>
 
   </div>
@@ -8081,6 +8088,7 @@ imported by:
     <a href="#components.commit">components.commit</a>
  &#8226;   <a href="#components.linkedin">components.linkedin</a>
  &#8226;   <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
 
   </div>
 
@@ -8097,6 +8105,45 @@ imports:
  &#8226;   <a href="#components.opencode">components.opencode</a>
  &#8226;   <a href="#halo">halo</a>
  &#8226;   <a href="#os">os</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="components.utils"></a>
+  <a target="code" href="///home/danilo/tooldevs/components/utils.py" type="text/plain"><tt>components.utils</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#components">components</a>
+ &#8226;   <a href="#subprocess">subprocess</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#components.commit">components.commit</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="components.workflow"></a>
+  <a target="code" href="///home/danilo/tooldevs/components/workflow.py" type="text/plain"><tt>components.workflow</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#InquirerPy">InquirerPy</a>
+ &#8226;   <a href="#components">components</a>
+ &#8226;   <a href="#components.commit">components.commit</a>
+ &#8226;   <a href="#components.opencode">components.opencode</a>
+ &#8226;   <a href="#halo">halo</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#re">re</a>
 
   </div>
   <div class="import">
@@ -8712,7 +8759,6 @@ imported by:
 imports:
     <a href="#_ctypes">_ctypes</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#nt">nt</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#struct">struct</a>
@@ -8724,14 +8770,10 @@ imports:
   </div>
   <div class="import">
 imported by:
-    <a href="#_ios_support">_ios_support</a>
- &#8226;   <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
+    <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
  &#8226;   <a href="#colorama.win32">colorama.win32</a>
- &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
  &#8226;   <a href="#ctypes._layout">ctypes._layout</a>
- &#8226;   <a href="#ctypes.macholib">ctypes.macholib</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#ctypes.wintypes">ctypes.wintypes</a>
  &#8226;   <a href="#halo.cursor">halo.cursor</a>
  &#8226;   <a href="#multiprocessing.sharedctypes">multiprocessing.sharedctypes</a>
@@ -8748,26 +8790,6 @@ imported by:
  &#8226;   <a href="#setuptools._vendor.wheel.macosx_libfile">setuptools._vendor.wheel.macosx_libfile</a>
  &#8226;   <a href="#setuptools.windows_support">setuptools.windows_support</a>
  &#8226;   <a href="#webbrowser">webbrowser</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="ctypes._aix"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/_aix.py" type="text/plain"><tt>ctypes._aix</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#subprocess">subprocess</a>
- &#8226;   <a href="#sys">sys</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#ctypes.util">ctypes.util</a>
 
   </div>
 
@@ -8810,107 +8832,6 @@ imported by:
 </div>
 
 <div class="node">
-  <a name="ctypes.macholib"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/macholib/__init__.py" type="text/plain"><tt>ctypes.macholib</tt></a>
-<span class="moduletype">Package</span>  <div class="import">
-imports:
-    <a href="#ctypes">ctypes</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
- &#8226;   <a href="#ctypes.macholib.dylib">ctypes.macholib.dylib</a>
- &#8226;   <a href="#ctypes.macholib.framework">ctypes.macholib.framework</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="ctypes.macholib.dyld"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/macholib/dyld.py" type="text/plain"><tt>ctypes.macholib.dyld</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#_ctypes">_ctypes</a>
- &#8226;   <a href="#ctypes.macholib">ctypes.macholib</a>
- &#8226;   <a href="#ctypes.macholib.dylib">ctypes.macholib.dylib</a>
- &#8226;   <a href="#ctypes.macholib.framework">ctypes.macholib.framework</a>
- &#8226;   <a href="#itertools">itertools</a>
- &#8226;   <a href="#os">os</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#ctypes.util">ctypes.util</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="ctypes.macholib.dylib"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/macholib/dylib.py" type="text/plain"><tt>ctypes.macholib.dylib</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes.macholib">ctypes.macholib</a>
- &#8226;   <a href="#re">re</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="ctypes.macholib.framework"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/macholib/framework.py" type="text/plain"><tt>ctypes.macholib.framework</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes.macholib">ctypes.macholib</a>
- &#8226;   <a href="#re">re</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
-
-  </div>
-
-</div>
-
-<div class="node">
-  <a name="ctypes.util"></a>
-  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/util.py" type="text/plain"><tt>ctypes.util</tt></a>
-<span class="moduletype">SourceModule</span>  <div class="import">
-imports:
-    <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
- &#8226;   <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
- &#8226;   <a href="#ctypes.wintypes">ctypes.wintypes</a>
- &#8226;   <a href="#importlib.machinery">importlib.machinery</a>
- &#8226;   <a href="#os">os</a>
- &#8226;   <a href="#re">re</a>
- &#8226;   <a href="#shutil">shutil</a>
- &#8226;   <a href="#struct">struct</a>
- &#8226;   <a href="#subprocess">subprocess</a>
- &#8226;   <a href="#sys">sys</a>
- &#8226;   <a href="#tempfile">tempfile</a>
-
-  </div>
-  <div class="import">
-imported by:
-    <a href="#_ios_support">_ios_support</a>
- &#8226;   <a href="#ctypes">ctypes</a>
-
-  </div>
-
-</div>
-
-<div class="node">
   <a name="ctypes.wintypes"></a>
   <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/ctypes/wintypes.py" type="text/plain"><tt>ctypes.wintypes</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -8922,7 +8843,6 @@ imports:
 imported by:
     <a href="#_pyrepl.windows_console">_pyrepl.windows_console</a>
  &#8226;   <a href="#colorama.win32">colorama.win32</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#prompt_toolkit.eventloop.win32">prompt_toolkit.eventloop.win32</a>
  &#8226;   <a href="#prompt_toolkit.input.win32">prompt_toolkit.input.win32</a>
  &#8226;   <a href="#prompt_toolkit.input.win32_pipe">prompt_toolkit.input.win32_pipe</a>
@@ -12895,6 +12815,7 @@ imports:
 imported by:
     <a href="#argparse">argparse</a>
  &#8226;   <a href="#getopt">getopt</a>
+ &#8226;   <a href="#optparse">optparse</a>
 
   </div>
 
@@ -13254,10 +13175,12 @@ imported by:
     <a href="#components.commit">components.commit</a>
  &#8226;   <a href="#components.linkedin">components.linkedin</a>
  &#8226;   <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
  &#8226;   <a href="#halo._utils">halo._utils</a>
  &#8226;   <a href="#halo.cursor">halo.cursor</a>
  &#8226;   <a href="#halo.halo">halo.halo</a>
  &#8226;   <a href="#halo.halo_notebook">halo.halo_notebook</a>
+ &#8226;   <a href="#main.py">main.py</a>
 
   </div>
 
@@ -13568,12 +13491,12 @@ imported by:
   <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/http/cookies.py" type="text/plain"><tt>http.cookies</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#base64">base64</a>
- &#8226;   <a href="#http">http</a>
+    <a href="#http">http</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#string">string</a>
  &#8226;   <a href="#time">time</a>
  &#8226;   <a href="#types">types</a>
+ &#8226;   <a href="#urllib.parse">urllib.parse</a>
 
   </div>
   <div class="import">
@@ -15624,7 +15547,6 @@ imports:
   <div class="import">
 imported by:
     <a href="#_pyrepl._module_completer">_pyrepl._module_completer</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#importlib">importlib</a>
  &#8226;   <a href="#importlib.abc">importlib.abc</a>
  &#8226;   <a href="#inspect">inspect</a>
@@ -15851,6 +15773,7 @@ imported by:
  &#8226;   <a href="#importlib.resources._itertools">importlib.resources._itertools</a>
  &#8226;   <a href="#importlib.resources.abc">importlib.resources.abc</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#setuptools._importlib">setuptools._importlib</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.text">setuptools._vendor.jaraco.text</a>
  &#8226;   <a href="#urllib3.contrib.emscripten.fetch">urllib3.contrib.emscripten.fetch</a>
@@ -16337,7 +16260,6 @@ imported by:
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#configparser">configparser</a>
- &#8226;   <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#fnmatch">fnmatch</a>
  &#8226;   <a href="#glob">glob</a>
@@ -16370,6 +16292,7 @@ imported by:
  &#8226;   <a href="#pydantic._internal._utils">pydantic._internal._utils</a>
  &#8226;   <a href="#pydantic.v1.class_validators">pydantic.v1.class_validators</a>
  &#8226;   <a href="#pydantic.v1.utils">pydantic.v1.utils</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#random">random</a>
  &#8226;   <a href="#reprlib">reprlib</a>
  &#8226;   <a href="#setuptools._distutils.command.sdist">setuptools._distutils.command.sdist</a>
@@ -49849,6 +49772,25 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="optparse"></a>
+  <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/optparse.py" type="text/plain"><tt>optparse</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#gettext">gettext</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#textwrap">textwrap</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#pyfiglet">pyfiglet</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="os"></a>
   <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/os.py" type="text/plain"><tt>os</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
@@ -49911,15 +49853,13 @@ imported by:
  &#8226;   <a href="#components.linkedin">components.linkedin</a>
  &#8226;   <a href="#components.opencode">components.opencode</a>
  &#8226;   <a href="#components.readme">components.readme</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
  &#8226;   <a href="#compression.zstd._zstdfile">compression.zstd._zstdfile</a>
  &#8226;   <a href="#concurrent.futures.process">concurrent.futures.process</a>
  &#8226;   <a href="#concurrent.futures.thread">concurrent.futures.thread</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
- &#8226;   <a href="#ctypes.macholib.dyld">ctypes.macholib.dyld</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#distro.distro">distro.distro</a>
  &#8226;   <a href="#dotenv.main">dotenv.main</a>
  &#8226;   <a href="#email.utils">email.utils</a>
@@ -49980,6 +49920,7 @@ imported by:
  &#8226;   <a href="#openai.lib.azure">openai.lib.azure</a>
  &#8226;   <a href="#openai.lib.bedrock">openai.lib.bedrock</a>
  &#8226;   <a href="#openai.resources.uploads.uploads">openai.resources.uploads.uploads</a>
+ &#8226;   <a href="#optparse">optparse</a>
  &#8226;   <a href="#os.path">os.path</a>
  &#8226;   <a href="#packaging._elffile">packaging._elffile</a>
  &#8226;   <a href="#packaging._manylinux">packaging._manylinux</a>
@@ -50011,6 +49952,7 @@ imported by:
  &#8226;   <a href="#pydantic.v1.env_settings">pydantic.v1.env_settings</a>
  &#8226;   <a href="#pydantic.v1.typing">pydantic.v1.typing</a>
  &#8226;   <a href="#pydoc">pydoc</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pyi_rth_setuptools.py">pyi_rth_setuptools.py</a>
  &#8226;   <a href="#random">random</a>
@@ -50591,6 +50533,7 @@ imported by:
  &#8226;   <a href="#pydantic.v1.validators">pydantic.v1.validators</a>
  &#8226;   <a href="#pydantic.v1.version">pydantic.v1.version</a>
  &#8226;   <a href="#pydantic.version">pydantic.version</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#setuptools._distutils.compilers.C.base">setuptools._distutils.compilers.C.base</a>
  &#8226;   <a href="#setuptools._distutils.dir_util">setuptools._distutils.dir_util</a>
  &#8226;   <a href="#setuptools._distutils.dist">setuptools._distutils.dist</a>
@@ -59143,6 +59086,67 @@ imported by:
 </div>
 
 <div class="node">
+  <a name="pyfiglet"></a>
+  <a target="code" href="///home/danilo/tooldevs/.venv/lib/python3.14/site-packages/pyfiglet/__init__.py" type="text/plain"><tt>pyfiglet</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#__future__">__future__</a>
+ &#8226;   <a href="#importlib.resources">importlib.resources</a>
+ &#8226;   <a href="#itertools">itertools</a>
+ &#8226;   <a href="#optparse">optparse</a>
+ &#8226;   <a href="#os">os</a>
+ &#8226;   <a href="#pathlib">pathlib</a>
+ &#8226;   <a href="#pyfiglet.version">pyfiglet.version</a>
+ &#8226;   <a href="#re">re</a>
+ &#8226;   <a href="#shutil">shutil</a>
+ &#8226;   <a href="#sys">sys</a>
+ &#8226;   <a href="#typing">typing</a>
+ &#8226;   <a href="#zipfile">zipfile</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#components.banner">components.banner</a>
+ &#8226;   <a href="#pyfiglet.fonts">pyfiglet.fonts</a>
+ &#8226;   <a href="#pyfiglet.version">pyfiglet.version</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="pyfiglet.fonts"></a>
+  <a target="code" href="///home/danilo/tooldevs/.venv/lib/python3.14/site-packages/pyfiglet/fonts/__init__.py" type="text/plain"><tt>pyfiglet.fonts</tt></a>
+<span class="moduletype">Package</span>  <div class="import">
+imports:
+    <a href="#pyfiglet">pyfiglet</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#main.py">main.py</a>
+
+  </div>
+
+</div>
+
+<div class="node">
+  <a name="pyfiglet.version"></a>
+  <a target="code" href="///home/danilo/tooldevs/.venv/lib/python3.14/site-packages/pyfiglet/version.py" type="text/plain"><tt>pyfiglet.version</tt></a>
+<span class="moduletype">SourceModule</span>  <div class="import">
+imports:
+    <a href="#pyfiglet">pyfiglet</a>
+
+  </div>
+  <div class="import">
+imported by:
+    <a href="#pyfiglet">pyfiglet</a>
+
+  </div>
+
+</div>
+
+<div class="node">
   <a name="pygments"></a>
   <a target="code" href="" type="text/plain"><tt>pygments</tt></a>
 <span class="moduletype">MissingModule</span>  <div class="import">
@@ -59305,12 +59309,9 @@ imported by:
  &#8226;   <a href="#charset_normalizer.models">charset_normalizer.models</a>
  &#8226;   <a href="#charset_normalizer.utils">charset_normalizer.utils</a>
  &#8226;   <a href="#colorama.ansitowin32">colorama.ansitowin32</a>
+ &#8226;   <a href="#components.workflow">components.workflow</a>
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#csv">csv</a>
- &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
- &#8226;   <a href="#ctypes.macholib.dylib">ctypes.macholib.dylib</a>
- &#8226;   <a href="#ctypes.macholib.framework">ctypes.macholib.framework</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#difflib">difflib</a>
  &#8226;   <a href="#distro.distro">distro.distro</a>
@@ -59411,6 +59412,7 @@ imported by:
  &#8226;   <a href="#pydantic.v1.validators">pydantic.v1.validators</a>
  &#8226;   <a href="#pydantic_core.core_schema">pydantic_core.core_schema</a>
  &#8226;   <a href="#pydoc">pydoc</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#re._casefix">re._casefix</a>
  &#8226;   <a href="#re._compiler">re._compiler</a>
@@ -60203,6 +60205,7 @@ imports:
  &#8226;   <a href="#keyword">keyword</a>
  &#8226;   <a href="#re">re</a>
  &#8226;   <a href="#readline">readline</a>
+ &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#warnings">warnings</a>
 
   </div>
@@ -64140,12 +64143,12 @@ imported by:
  &#8226;   <a href="#InquirerPy.prompts.list">InquirerPy.prompts.list</a>
  &#8226;   <a href="#InquirerPy.utils">InquirerPy.utils</a>
  &#8226;   <a href="#argparse">argparse</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#halo._utils">halo._utils</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#multiprocessing.util">multiprocessing.util</a>
  &#8226;   <a href="#pathlib">pathlib</a>
  &#8226;   <a href="#prompt_toolkit.buffer">prompt_toolkit.buffer</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#setuptools._distutils.spawn">setuptools._distutils.spawn</a>
  &#8226;   <a href="#setuptools._vendor.backports.tarfile">setuptools._vendor.backports.tarfile</a>
  &#8226;   <a href="#setuptools._vendor.jaraco.context">setuptools._vendor.jaraco.context</a>
@@ -64765,7 +64768,6 @@ imported by:
  &#8226;   <a href="#asyncio.windows_events">asyncio.windows_events</a>
  &#8226;   <a href="#base64">base64</a>
  &#8226;   <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#gettext">gettext</a>
  &#8226;   <a href="#gzip">gzip</a>
  &#8226;   <a href="#multiprocessing.connection">multiprocessing.connection</a>
@@ -64829,9 +64831,7 @@ imported by:
  &#8226;   <a href="#asyncio.subprocess">asyncio.subprocess</a>
  &#8226;   <a href="#asyncio.unix_events">asyncio.unix_events</a>
  &#8226;   <a href="#asyncio.windows_utils">asyncio.windows_utils</a>
- &#8226;   <a href="#components.commit">components.commit</a>
- &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
+ &#8226;   <a href="#components.utils">components.utils</a>
  &#8226;   <a href="#distro.distro">distro.distro</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#multiprocessing.popen_spawn_win32">multiprocessing.popen_spawn_win32</a>
@@ -64867,7 +64867,6 @@ imported by:
  &#8226;   <a href="#_collections_abc">_collections_abc</a>
  &#8226;   <a href="#_colorize">_colorize</a>
  &#8226;   <a href="#_distutils_hack">_distutils_hack</a>
- &#8226;   <a href="#_ios_support">_ios_support</a>
  &#8226;   <a href="#_py_warnings">_py_warnings</a>
  &#8226;   <a href="#_pydatetime">_pydatetime</a>
  &#8226;   <a href="#_pydecimal">_pydecimal</a>
@@ -64927,10 +64926,8 @@ imported by:
  &#8226;   <a href="#configparser">configparser</a>
  &#8226;   <a href="#contextlib">contextlib</a>
  &#8226;   <a href="#ctypes">ctypes</a>
- &#8226;   <a href="#ctypes._aix">ctypes._aix</a>
  &#8226;   <a href="#ctypes._endian">ctypes._endian</a>
  &#8226;   <a href="#ctypes._layout">ctypes._layout</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#dataclasses">dataclasses</a>
  &#8226;   <a href="#decimal">decimal</a>
  &#8226;   <a href="#dis">dis</a>
@@ -64994,6 +64991,7 @@ imported by:
  &#8226;   <a href="#openai._base_client">openai._base_client</a>
  &#8226;   <a href="#openai._utils._compat">openai._utils._compat</a>
  &#8226;   <a href="#openai._utils._typing">openai._utils._typing</a>
+ &#8226;   <a href="#optparse">optparse</a>
  &#8226;   <a href="#os">os</a>
  &#8226;   <a href="#packaging._manylinux">packaging._manylinux</a>
  &#8226;   <a href="#packaging._musllinux">packaging._musllinux</a>
@@ -65056,6 +65054,7 @@ imported by:
  &#8226;   <a href="#pydantic_core">pydantic_core</a>
  &#8226;   <a href="#pydantic_core.core_schema">pydantic_core.core_schema</a>
  &#8226;   <a href="#pydoc">pydoc</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#pyi_rth_multiprocessing.py">pyi_rth_multiprocessing.py</a>
  &#8226;   <a href="#quopri">quopri</a>
@@ -65135,6 +65134,7 @@ imported by:
  &#8226;   <a href="#termcolor.termcolor">termcolor.termcolor</a>
  &#8226;   <a href="#threading">threading</a>
  &#8226;   <a href="#tokenize">tokenize</a>
+ &#8226;   <a href="#tomllib._parser">tomllib._parser</a>
  &#8226;   <a href="#traceback">traceback</a>
  &#8226;   <a href="#types">types</a>
  &#8226;   <a href="#typing">typing</a>
@@ -65282,7 +65282,6 @@ imports:
 imported by:
     <a href="#_pyrepl.pager">_pyrepl.pager</a>
  &#8226;   <a href="#anyio._core._tempfile">anyio._core._tempfile</a>
- &#8226;   <a href="#ctypes.util">ctypes.util</a>
  &#8226;   <a href="#dotenv.main">dotenv.main</a>
  &#8226;   <a href="#importlib.resources._common">importlib.resources._common</a>
  &#8226;   <a href="#multiprocessing.heap">multiprocessing.heap</a>
@@ -65372,6 +65371,7 @@ imported by:
  &#8226;   <a href="#argparse">argparse</a>
  &#8226;   <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.metadata._adapters">importlib.metadata._adapters</a>
+ &#8226;   <a href="#optparse">optparse</a>
  &#8226;   <a href="#pdb">pdb</a>
  &#8226;   <a href="#pydantic._internal._docs_extraction">pydantic._internal._docs_extraction</a>
  &#8226;   <a href="#pydoc">pydoc</a>
@@ -65671,6 +65671,7 @@ imported by:
 imports:
     <a href="#'collections.abc'">'collections.abc'</a>
  &#8226;   <a href="#__future__">__future__</a>
+ &#8226;   <a href="#sys">sys</a>
  &#8226;   <a href="#tomllib">tomllib</a>
  &#8226;   <a href="#tomllib._re">tomllib._re</a>
  &#8226;   <a href="#tomllib._types">tomllib._types</a>
@@ -65967,6 +65968,7 @@ imported by:
  &#8226;   <a href="#pydantic.validate_call_decorator">pydantic.validate_call_decorator</a>
  &#8226;   <a href="#queue">queue</a>
  &#8226;   <a href="#requests.compat">requests.compat</a>
+ &#8226;   <a href="#rlcompleter">rlcompleter</a>
  &#8226;   <a href="#setuptools._vendor.importlib_metadata">setuptools._vendor.importlib_metadata</a>
  &#8226;   <a href="#setuptools._vendor.importlib_metadata._functools">setuptools._vendor.importlib_metadata._functools</a>
  &#8226;   <a href="#setuptools._vendor.importlib_metadata.compat.py311">setuptools._vendor.importlib_metadata.compat.py311</a>
@@ -67017,6 +67019,7 @@ imported by:
  &#8226;   <a href="#pydantic_core">pydantic_core</a>
  &#8226;   <a href="#pydantic_core._pydantic_core">pydantic_core._pydantic_core</a>
  &#8226;   <a href="#pydantic_core.core_schema">pydantic_core.core_schema</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#requests._types">requests._types</a>
  &#8226;   <a href="#requests.adapters">requests.adapters</a>
  &#8226;   <a href="#requests.api">requests.api</a>
@@ -68801,6 +68804,7 @@ imported by:
     <a href="#email.utils">email.utils</a>
  &#8226;   <a href="#http.client">http.client</a>
  &#8226;   <a href="#http.cookiejar">http.cookiejar</a>
+ &#8226;   <a href="#http.cookies">http.cookies</a>
  &#8226;   <a href="#http.server">http.server</a>
  &#8226;   <a href="#httpcore._models">httpcore._models</a>
  &#8226;   <a href="#httpx._content">httpx._content</a>
@@ -70855,8 +70859,7 @@ imported by:
   <a target="code" href="///home/linuxbrew/.linuxbrew/opt/python%403.14/lib/python3.14/webbrowser.py" type="text/plain"><tt>webbrowser</tt></a>
 <span class="moduletype">SourceModule</span>  <div class="import">
 imports:
-    <a href="#_ios_support">_ios_support</a>
- &#8226;   <a href="#argparse">argparse</a>
+    <a href="#argparse">argparse</a>
  &#8226;   <a href="#copy">copy</a>
  &#8226;   <a href="#ctypes">ctypes</a>
  &#8226;   <a href="#os">os</a>
@@ -71374,6 +71377,7 @@ imports:
 imported by:
     <a href="#importlib.metadata">importlib.metadata</a>
  &#8226;   <a href="#importlib.resources.readers">importlib.resources.readers</a>
+ &#8226;   <a href="#pyfiglet">pyfiglet</a>
  &#8226;   <a href="#pyi_rth_inspect.py">pyi_rth_inspect.py</a>
  &#8226;   <a href="#requests.utils">requests.utils</a>
  &#8226;   <a href="#setuptools._distutils.archive_util">setuptools._distutils.archive_util</a>
